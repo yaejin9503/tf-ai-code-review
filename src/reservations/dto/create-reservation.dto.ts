@@ -1,8 +1,9 @@
 // src/reservations/dto/create-reservation.dto.ts
-import { IsString, IsDate, IsNotEmpty } from 'class-validator';
+import { IsString, IsDate, IsNotEmpty, IsEmail } from 'class-validator';
 
 export class CreateReservationDto {
   @IsString()
+  @IsNotEmpty()
   customerName: string;
 
   @IsDate()
@@ -11,4 +12,8 @@ export class CreateReservationDto {
   @IsString()
   @IsNotEmpty()
   serviceType: string;
+
+  @IsEmail()
+  @IsNotEmpty()
+  customerEmail: string; // 고객 이메일 추가
 }
