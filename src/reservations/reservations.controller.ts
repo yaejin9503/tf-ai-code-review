@@ -1,5 +1,4 @@
-// src/reservations/reservations.controller.ts
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { ReservationsService } from './reservations.service';
 import { CreateReservationDto } from './dto/create-reservation.dto';
 
@@ -15,5 +14,15 @@ export class ReservationsController {
   @Get()
   findAll() {
     return this.reservationsService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.reservationsService.findOne(+id);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.reservationsService.remove(+id);
   }
 }
