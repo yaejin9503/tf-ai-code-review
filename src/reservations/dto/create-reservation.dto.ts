@@ -3,12 +3,12 @@ import { IsString, IsDate, IsNotEmpty } from 'class-validator';
 
 export class CreateReservationDto {
   @IsString()
-  @IsNotEmpty()
   customerName: string;
 
   @IsDate()
   reservationDate: Date;
 
   @IsString()
+  @IsNotEmpty()
   serviceType: string;
 }
