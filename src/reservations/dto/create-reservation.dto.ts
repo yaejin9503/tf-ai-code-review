@@ -10,6 +10,5 @@ export class CreateReservationDto {
   reservationDate: Date;
 
   @IsString()
-  // @IsNotEmpty()
   serviceType: string;
 }
