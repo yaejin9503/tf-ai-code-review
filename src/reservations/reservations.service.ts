@@ -18,7 +18,7 @@ export class ReservationsService {
     );
 
     if (existingReservation) {
-      throw new ConflictException('이미 예약이 존재합니다.!!!!!');
+      throw new ConflictException('이미 예약이 존재합니다.');
     }
 
     const newReservation = {
@@ -41,12 +41,12 @@ export class ReservationsService {
     return reservation;
   }
 
-  // remove(id: number) {
-  //   const index = this.reservations.findIndex((res) => res.id === id);
-  //   if (index === -1) {
-  //     throw new NotFoundException('예약을 찾을 수 없습니다.');
-  //   }
-  //   this.reservations.splice(index, 1);
-  //   return { message: '예약이 삭제되었습니다.' };
-  // }
+  remove(id: number) {
+    const index = this.reservations.findIndex((res) => res.id === id);
+    if (index === -1) {
+      throw new NotFoundException('예약을 찾을 수 없습니다.');
+    }
+    this.reservations.splice(index, 1);
+    return { message: '예약이 삭제되었습니다.' };
+  }
 }
