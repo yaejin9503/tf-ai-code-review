@@ -22,5 +22,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           LANGUAGE: Korean
-          MODEL: gpt-4
+          MODEL: gpt-4o
           PROMPT: 당신은 경험이 풍부한 개발 전문가입니다. 코드리뷰를 해주세요.
